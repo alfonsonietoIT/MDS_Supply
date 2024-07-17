@@ -1802,7 +1802,7 @@ if($nRun == 0){
 //                        . "schalunkal@assentresources.com, steve.mceuen@masterworkelectronics.com, tchacon@masterworkelectronics.com, "
 //                        . "ted.murphy@masterworkelectronics.com, aurelio.leal@masterworkelectronics.com, andrea@masterworkelectronics.com, "
 //                        . "michael.conway@masterworkelectronics.com, ernesto.vanegas@masterworkelectronics.com, mario.chavez@masterworkelectronics.com";
-                $ToEmail = "postatus@masterworkelectronics.com";
+                $ToEmail = "mds.po.status@masterworkelectronics.com";
                 //$ToEmail = "mario.chavez@masterworkelectronics.com";
 
                 $FromEmail = "btb@masterworkelectronics.com";
