@@ -1,0 +1,134 @@
+#!/usr/bin/php
+<?php
+//dbEmail de Supply Project
+
+error_reporting(0);
+$sI = $sII = $sIII = $sIV = "";
+
+include '/var/www/html/Supply/PHPClass/DB.php';
+include '/var/www/html/Supply/PHPFunctions/var.php';
+include '/var/www/html/Supply/PHPFunctions/Function_SMS.php';
+
+/***************************************************************************** Crea PPV ***********************/
+
+$nCount = 0;
+//Agrega los PPV
+$sQR = "SELECT * FROM dbEmail WHERE Status = 'Open' ORDER BY idEmail ASC";
+
+$rQR = $cnx->query($sQR)->fetchAll();
+foreach ($rQR as &$rQRx) {
+    $nCount++;
+    $g_idEmail = $rQRx['idEmail'];
+    $g_AppInfo = $rQRx['AppInfo'];
+    $g_SubjectEmail = $rQRx['SubjectEmail'];
+    $g_ToEmail = $rQRx['ToEmail'];
+    $g_FromEmail = $rQRx['FromEmail'];
+    $g_MessageEmail = nl2br($rQRx['MessageEmail']);
+    $g_ReplyEmail = $rQRx['ReplyEmail'];
+    $g_DateTime = $rQRx['DateTime'];
+    
+    $logoMW = "http://intranet.masterworkelectronics.com/ImagesLogoMasterSmall.png";
+    $logosoft = "http://intranet.masterworkelectronics.com/ImagesLogoSoftDevMX100.png";
+    $link = "https://www.softwaredevelopment.mx";
+    $m_Subject = "Test Email";
+    $m_message = "Test message";
+    //<img src='$logoMW' width='50px' style:'width:50px;'>
+    
+    $NewLogo = "<img src='data:image/png;base64,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' />";
+    
+    //HTML
+    $html = "";
+    $html .= "
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>
+    $g_SubjectEmail
+    </title>
+    </head>
+    <body style='font-size:10px;font-family:Verdana;background-color:#fff;'>
+    <center>
+    <table width=\'750\' cellspacing=\'0\' cellpadding=\'0\'>
+    <tr>
+    <td width='50%' align='left' valign='top'>
+    <font style=\'color:#c7c7c7;font-size:10px;\'>Masterwork Electronics - MDS System<BR></font>
+    $NewLogo<br>
+    Masterwork Electronics - Mexicali
+    </td>
+    <td width='50%' align='right' valign='top'>
+    $g_AppInfo
+    </td>
+    </tr>
+    <tr>
+    <td width='750' colspan='2' bgcolor='#f7f7f7'>
+    &nbsp;
+    </td>
+    </tr>
+    <tr>
+    <td colspan='2'>
+    <br><br>
+    $g_MessageEmail
+    <br><br>
+    </td>
+    </tr>
+    <tr>
+    <td colspan='2' bcolor:'#f7f7f7'>
+    <br><BR>
+    <hr style='border: 0;height: 1px;background-image: linear-gradient(to right, rgba(1, 136, 238, 0), rgba(1, 136, 238, 0.75), rgba(1, 136, 238, 0));'>
+    <font style='font-family: verdana;font-size: 8pt;color: gray;'>
+    &copy; <b>Masterwork Electronics - Mexicali</b>
+    </font>
+    </td>
+    </tr>
+    </table>
+    </center>
+    </body>
+    </html>
+    ";
+
+    require_once "Mail.php";
+
+    $host = "smtp.office365.com";
+    $username = "scanner@masterworkelectronics.com";
+    $password = "+Tlc@\\+SxY";
+    $port = "587";
+    $to = $g_ToEmail;
+    $email_from = "scanner@masterworkelectronics.com";
+    $email_subject = $g_SubjectEmail;
+    $email_body = $html;
+    $email_address = "scanner@masterworkelectronics.com";
+    $MIME = "1.0";
+    $ContentType = "text/html; charset=UTF-8\r\n";
+
+    $headers = array ('From' => $email_from, 
+        'To' => $to, 'Subject' => $email_subject, 
+        'Reply-To' => $email_address, 'MIME-Version' => $MIME, 'Content-Type' => $ContentType);
+    $smtp = Mail::factory('smtp', array ('host' => $host, 'port' => $port, 'auth' => true, 'username' => $username, 'password' => $password));
+    $mail = $smtp->send($to, $headers, $email_body);
+
+
+    if (PEAR::isError($mail)) {
+        $EStatus = "Error";
+        $logEMail = $mail->getMessage();
+//        echo("<p>" . $mail->getMessage() . "</p>");
+    } else {
+        $EStatus = "Sended";
+//        echo("<p>Message successfully sent!</p>");
+    }
+    
+    $uEmail = "UPDATE dbEmail SET Status = '$EStatus', logEmail = '$logEMail' WHERE idEmail = '$g_idEmail'";
+    //echo $uEmail . "<BR>";
+    $RuEmail = $cnx->query($uEmail);
+    
+}
+
+
+
+//echo "Termine..."
+
+/*
+$dnow4 = date('Y-m-d H:i:s', time());
+//N unlink($Po_Link);
+SMS("6862166100", "Se Termino Procesar forPPV $dnow4", "", "Mario", "forPPV");
+*/
+?>

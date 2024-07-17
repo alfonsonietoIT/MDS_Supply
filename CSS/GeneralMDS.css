@@ -1,0 +1,655 @@
+/*@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);*/
+
+@font-face {font-family: "KoHoL";
+    src: url("KoHo-Light.ttf") format("truetype");
+}
+
+@font-face {font-family: "KoHoM";
+    src: url("KoHo-Medium.ttf") format("truetype");
+}
+
+@font-face {font-family: "KoHoB";
+    src: url("KoHo-Bold.ttf") format("truetype");
+}
+
+@font-face {font-family: "KoHoLi";
+    src: url("KoHo-LightItalic.ttf") format("truetype");
+}
+
+@font-face {font-family: "KoHoMi";
+    src: url("KoHo-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {font-family: "KoHoBi";
+    src: url("KoHo-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {font-family: "Shadows2";
+    src: url("ShadowsIntoLightTwo-Regular.ttf") format("truetype");
+}
+
+@font-face {font-family: "Bahianita";
+    src: url("Bahianita-Regular.ttf") format("truetype");
+}
+
+@font-face {font-family: "Roboto";
+    src: url("RobotoCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {font-family: "Exo";
+    src: url("Exo2-Bold.ttf") format("truetype");
+}
+
+font.Ex {
+    font-family: 'Shadows2';
+    font-size: 2em;
+    font-weight: 500;
+}
+
+font.Exs {
+    font-family: 'Shadows2';
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+font.Exss {
+    font-family: 'Shadows2';
+    font-size: 1em;
+    font-weight: 500;
+}
+
+font.Exsss {
+    font-family: 'Shadows2';
+    font-size: .7em;
+}
+
+font.Koh {
+    font-family: 'KoHoL';
+    font-size: 2em;
+    font-weight: 500;
+}
+
+font.Kohs {
+    font-family: 'KoHoL';
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+font.Kohss {
+    font-family: 'KoHoL';
+    font-size: 1em;
+    font-weight: 500;
+}
+
+font.Kohsss {
+    font-family: 'KoHoL';
+    font-size: .7em;
+}
+
+font.Bah {
+    font-family: 'Bahianita';
+    font-size: 2em;
+    font-weight: 500;
+}
+
+font.Bahs {
+    font-family: 'Bahianita';
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+font.Bahss {
+    font-family: 'Bahianita';
+    font-size: 1em;
+    font-weight: 500;
+}
+
+font.Bahsss {
+    font-family: 'Bahianita';
+    font-size: .7em;
+}
+
+font.Rob {
+    font-family: 'Roboto';
+    font-size: 2em;
+    font-weight: 500;
+}
+
+font.Robs {
+    font-family: 'Roboto';
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+font.Robss {
+    font-family: 'Roboto';
+    font-size: 1em;
+    font-weight: 500;
+}
+
+font.Robsss {
+    font-family: 'Roboto';
+    font-size: .7em;
+}
+
+font.Ex {
+    font-family: 'Exo';
+    font-size: 2em;
+    font-weight: 500;
+}
+
+font.Exs {
+    font-family: 'Exo';
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+font.Exss {
+    font-family: 'Exo';
+    font-size: 1em;
+    font-weight: 500;
+}
+
+font.Exsss {
+    font-family: 'Exo';
+    font-size: .7em;
+}
+
+/* ############################ MENU */
+.sidenav {
+  font-family: 'Bahianita';
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+    font-family: 'Bahianita';
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    font-family: 'Bahianita';
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* #####################  Backgorund */
+html { 
+  background: url(../Images/Background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+/* ############################ ANIMACION */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  /* background: #dfc; */
+  background: gray;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+/* *********************** LINK */
+a.linkn {
+    font-family: 'Roboto';
+    color:black;
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+a.linkn:hover {
+    color: #005769;
+}
+
+
+a.linkr {
+    font-family: 'Roboto';
+    color:#005769;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+a.linkr:hover {
+    color: red;
+}
+
+a.linkln {
+    font-family: 'Exo';
+    color:black;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+a.linkln:hover {
+    color: #005769;
+    text-decoration: underline;
+}
+
+
+a.linklr {
+    font-family: 'Exo';
+    color:#005769;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+a.linklr:hover {
+    color: black;
+    font-weight: bold;
+    background-color: #f7f7f7;
+    text-decoration: underline;
+}
+
+/************************* BUTTONS */
+a.linkB, a.linkB:visited {
+    font-family: 'Ex';
+    font-size: 1em;
+    background-color: white;
+    color: black;
+    border: 2px solid #005769;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.linkB:hover, a.linkB:active {
+    background-color: #005769;
+    color: white;
+}
+
+
+/* ********************** REC CIRCLE */
+div.numberCircle {
+    width: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-family: 'Bahianita';
+    color:white;
+    background-color: red;
+    font-size: 1em;
+    border: 1px solid red;
+    display: inline-block;
+}
+
+
+/* *********************** FORM */
+input.text {
+    border: 1 px solid black;
+    font-family: 'KoHoL';
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+}
+
+textarea.atext {
+    border: 1 px solid black;
+    font-family: 'KoHoL';
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+}
+
+select.stext {
+    border: 1 px solid black;
+    font-family: 'KoHoL';
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5px 10px 5px 10px;
+}
+
+input.subm {
+    font-family: 'KoHoL';
+    font-size: 1.3em;
+    font-weight: 500;
+    padding: 5px 20px 5px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #f7F7F7;
+    color: black;
+    border-radius: 0;
+    
+}
+
+input.subm:hover {
+    background-color: gray;
+    color: white;
+}
+
+/************************* LIST */
+th.tit_col_center, th.tit_col_justify_br {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 3px 5px 3px 5px;
+    background-color: #D0D0D0;
+    border: 1px solid black;
+}
+
+th.tit_col_center_yellow, th.tit_col_justify_br_yellow {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 3px 5px 3px 5px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+th.tit_col_left {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 3px 5px 3px 5px;
+    background-color: #D0D0D0;
+    border: 1px solid black;
+}
+
+td.tit_col_center, td.tit_col_justify_br {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 3px 5px 3px 5px;
+    background-color: #D0D0D0;
+    border: 1px solid black;
+}
+
+td.tit_col_center_yellow, td.tit_col_justify_br_yellow {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 3px 5px 3px 5px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+td.tit_col_left {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 3px 5px 3px 5px;
+    background-color: #D0D0D0;
+    border: 1px solid black;
+}
+
+td.col_center {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 1px 2px 1px 2px;
+    color: black;
+    text-align: center;
+    align-content: center;
+}
+
+td.col_center_red {
+    background-color: red;
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 1px 2px 1px 2px;
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+
+td.col_center_green {
+    background-color: yellowgreen;
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 1px 2px 1px 2px;
+    color: black;
+    text-align: center;
+    align-content: center;
+}
+
+td.col_center_yellow {
+    background-color: yellow;
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 1px 2px 1px 2px;
+    color: black;
+    text-align: center;
+    align-content: center;
+}
+
+td.col_left {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 1px 2px 1px 2px;
+    color: black;
+    text-align: left;
+    align-content: left;
+}
+
+td.col_right {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 1px 2px 1px 2px;
+    color: black;
+    text-align: right;
+    align-content: right;
+}
+
+td.col_justify_br {
+    font-family: 'KoHoL';
+    font-size: .9em;
+    padding: 1px 2px 1px 2px;
+    color: black;
+    text-align: justify;
+    align-content: left;
+}
+
+/************************* MESSENGER */
+.discussion {
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: 'KoHoL';
+    font-size: .9em;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.discussion > .bubble {
+    border-radius: 1em;
+    padding: 0.25em 0.75em;
+    margin: 0.0625em;
+    max-width: 50%;
+}
+
+.discussion > .bubble.sender {
+    align-self: flex-start;
+    background-color: cornflowerblue;
+    color: #fff;
+    text-align: justify;
+}
+.discussion > .bubble.recipient {
+    align-self: flex-end;
+    background-color: #efefef;
+    text-align: right;
+}
+.discussion > .bubble.general {
+    align-self: flex-end;
+    background-color: LightYellow;
+    text-align: center;
+}
+.discussion > .bubble.general {
+    align-self: flex-end;
+    background-color: LightYellow;
+    text-align: center;
+}
+
+.discussion > .bubble.sender.first { 
+    border-bottom-left-radius: 0.1em;
+    text-align: justify;
+}
+
+.discussion > .bubble.sender.last { 
+    border-top-left-radius: 0.1em; 
+}
+
+.discussion > .bubble.sender.middle {
+    border-bottom-left-radius: 0.1em;
+    border-top-left-radius: 0.1em;
+}
+
+.discussion > .bubble.recipient.first { 
+    border-bottom-right-radius: 0.1em;
+    text-align: right;
+}
+
+.discussion > .bubble.recipient.last { 
+    border-top-right-radius: 0.1em; 
+}
+
+.discussion > .bubble.recipient.middle {
+    border-bottom-right-radius: 0.1em;
+    border-top-right-radius: 0.1em;
+}
+
+.discussion > .bubble.general.first { 
+    border-bottom-right-radius: 0.1em;
+    border-top-right-radius: 0.1em;
+    text-align: center;
+}
+
+.discussion > .bubble.general.last { 
+    border-top-right-radius: 0.1em; 
+}
+
+.discussion > .bubble.general.middle {
+    border-bottom-right-radius: 0.1em;
+    border-top-right-radius: 0.1em;
+}
+
+/************************* POPUP */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+#popupBody{
+    width: 50%;
+    padding: 2%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background: #FFF;
+    position: relative;
+    transition: all 5s ease-in-out;
+    margin: 5% auto; 
+    overflow: auto;
+    height: 70%;
+}
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../Images/loader.svg') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+}
